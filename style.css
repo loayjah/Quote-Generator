@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 #quote-container {
@@ -17,16 +18,45 @@ body {
   max-width: 60%;
   border-radius: 25px;
   padding: 3em;
-  position: absolute;
+  font-family: "Ubuntu";
 }
 
-#quote-text,
-#quote-author {
+#quote-text {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
   font-size: 2em;
   margin-top: 0;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 #quote-author {
   font-size: 1.5em;
+  display: block;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+.fas {
+  font-size: 3.5em;
+  color: #21a0a0;
+}
+
+button {
+  display: inline-block;
+  margin-top: 25px;
+  background: white;
+  border: none;
+  color: #21a0a0;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.8em;
+  border-radius: 15px;
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: #60bbbb;
+  color: white;
+  cursor: pointer;
 }
