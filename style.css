@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #21a0a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#quote-container {
+  background-color: white;
+  text-align: center;
+  max-width: 60%;
+  border-radius: 25px;
+  padding: 3em;
+  position: absolute;
+}
+
+#quote-text,
+#quote-author {
+  font-size: 2em;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+#quote-author {
+  font-size: 1.5em;
+}
