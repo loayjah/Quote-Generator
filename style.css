@@ -20,7 +20,7 @@ body {
 }
 
 .quote-hover-container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   position: absolute;
   top: 0;
   left: 0;
@@ -75,6 +75,10 @@ body {
 .fas {
   font-size: 3.5em;
   color: #21a0a0;
+}
+
+.fa-copy {
+  color: black;
 }
 
 #generate-quote-btn {
