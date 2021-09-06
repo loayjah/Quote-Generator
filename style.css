@@ -1,24 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
 html {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  margin: 0px;
   background-color: #21a0a0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
+  padding: 25px;
 }
 
-#quote-container {
+.quote-main-container {
   background-color: white;
-  text-align: center;
-  max-width: 60%;
+}
+
+.quote-hover-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  /*
+  these properties need to be set when there is a hover over main-container
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  */
+}
+
+.quote-container {
   border-radius: 25px;
   padding: 3em;
-  font-family: "Ubuntu";
+}
+
+#main-container {
+  text-align: center;
+  max-width: 60%;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
 }
 
 #quote-text {
@@ -37,12 +66,18 @@ body {
   margin-top: 20px;
 }
 
+#quote-hover-text {
+  margin-top: 30px;
+  font-size: 1.5em;
+  line-height: 1.8;
+}
+
 .fas {
   font-size: 3.5em;
   color: #21a0a0;
 }
 
-button {
+#generate-quote-btn {
   display: inline-block;
   margin-top: 25px;
   background: white;
@@ -55,7 +90,7 @@ button {
   transition-duration: 0.5s;
 }
 
-button:hover {
+#generate-quote-btn:hover {
   background-color: #60bbbb;
   color: white;
   cursor: pointer;
