@@ -11,11 +11,17 @@
 </head>
 <body>
     <div id="main-container">
+        
         <div class="quote-container quote-main-container">
-            <i class="fas fa-quote-left"></i>
-             <blockquote id="quote-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate vitae quidem et accusamus. At, iusto expedita accusamus explicabo non voluptatum quos eveniet et ipsam, laborum nihil iste aliquam! Libero.</blockquote>
-             <i class="fas fa-quote-right"></i>
-             <em id="quote-author">- Author</em>
+            <i class="fas fa-spinner fa-pulse" id="loadingSpinner"></i>
+            <div id="quote-wrapper">
+                <i class="fas fa-quote-left"></i>
+                <blockquote id="quote-text"></blockquote>
+                <i class="fas fa-quote-right"></i>
+                <em id="quote-author">- Author</em>
+
+            </div>
+
         </div>
     
         <div class="quote-container quote-hover-container">
@@ -26,7 +32,7 @@
     </div>
 
 
-    <button id="generate-quote-btn">Generate New Quote</button>
+    <button id="generate-quote-btn">Generate Quote</button>
     <!-- Script -->
     <script src="script.js"></script>
 </body>

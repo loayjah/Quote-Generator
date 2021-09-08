@@ -17,6 +17,7 @@ body {
 
 .quote-main-container {
   background-color: white;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .quote-hover-container {
@@ -48,6 +49,7 @@ body {
   max-width: 60%;
   font-family: "Ubuntu", sans-serif;
   position: relative;
+  min-width: 40%;
 }
 
 #quote-text {
@@ -92,10 +94,16 @@ body {
   font-size: 1.8em;
   border-radius: 15px;
   transition-duration: 0.5s;
+  visibility: hidden;
 }
 
 #generate-quote-btn:hover {
   background-color: #60bbbb;
   color: white;
   cursor: pointer;
+}
+
+#generate-quote-btn:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(121, 121, 121, 0.65);
 }
