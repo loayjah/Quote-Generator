@@ -9,6 +9,7 @@ const quoteWrapper = document.querySelector("#quote-wrapper");
 
 // generate and set the random primary color of the page
 var primaryColor = changePrimaryColor();
+var secondaryColor = changeSecondaryColor();
 
 var apiQuotes = [];
 
@@ -50,6 +51,7 @@ function completedFetching() {
 
   generateQuoteBtn.addEventListener("click", () => {
     changePrimaryColor();
+    changeSecondaryColor();
     listenToHoverOverButton();
     getNewQuote();
   });
@@ -71,7 +73,7 @@ function setQuoteContent(text, author) {
 }
 
 function listenToHoverOverButton() {
-  generateQuoteBtn.style.backgroundColor = getDarkerPrimaryColor(primaryColor);
+  generateQuoteBtn.style.backgroundColor = secondaryColor;
   generateQuoteBtn.style.color = "white";
 }
 
@@ -91,16 +93,21 @@ function getDarkerPrimaryColor(primaryColor) {
   return setRGBColor(darkerColors[0], darkerColors[1], darkerColors[2]);
 }
 
+function changeSecondaryColor() {
+  secondaryColor = getDarkerPrimaryColor(primaryColor);
+  document.querySelector("#page-footer").style.backgroundColor = secondaryColor;
+  return secondaryColor;
+}
+
 // a function to set the primary color on elements
 function changePrimaryColor() {
   primaryColor = generateRandomColor();
   generateQuoteBtn.style.color = primaryColor;
+  document.querySelector("#wrapper").style.backgroundColor = primaryColor;
   document.body.style.backgroundColor = primaryColor;
-
-  document.querySelectorAll(".fas").forEach((element) => {
+  document.querySelectorAll(".fa-color").forEach((element) => {
     element.style.color = primaryColor;
   });
-  document.querySelector(".fa-copy").style.color = "black";
   return primaryColor;
 }
 

@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="wrapper">
     <div id="main-container">
         
         <div class="quote-container quote-main-container">
-            <i class="fas fa-spinner fa-pulse" id="loadingSpinner"></i>
+            <i class="fas fa-spinner fa-pulse fa-color" id="loadingSpinner"></i>
             <div id="quote-wrapper">
-                <i class="fas fa-quote-left"></i>
+                <i class="fas fa-quote-left fa-color"></i>
                 <blockquote id="quote-text"></blockquote>
-                <i class="fas fa-quote-right"></i>
+                <i class="fas fa-quote-right fa-color"></i>
                 <em id="quote-author">- Author</em>
 
             </div>
@@ -33,6 +34,13 @@
 
 
     <button id="generate-quote-btn">Generate Quote</button>
+</div>
+
+    <footer id="page-footer">
+        <h3>made with   <i class="fas fa-heart"></i>   by 
+            <a  target="_blank" id="personal-profile-link" href="https://loayjah.com">Loay</a>
+            </h3>
+    </footer>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
