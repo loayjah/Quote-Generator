@@ -154,6 +154,7 @@ body {
 @media (max-width: 478px) {
   #wrapper {
     max-width: 90%;
+    margin-top: 16px;
   }
 
   .quote-box {
@@ -161,7 +162,20 @@ body {
     padding: 2em;
   }
   #quote-text {
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 2em;
+  }
+  #quote-author {
+    font-size: 1.2em;
+  }
+
+  #generate-quote-btn {
+    font-size: 1.5em;
+  }
+  #generate-quote-btn:hover {
+  }
+  .fas {
+    font-size: 2.5em;
+    color: #21a0a0;
   }
 }
