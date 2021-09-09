@@ -13,6 +13,8 @@ var secondaryColor = "#197878";
 
 var apiQuotes = [];
 
+var isTouchScreen = "ontouchstart" in document.documentElement;
+//window.matchMedia("(min-width: 767px)");
 /* Here the application start */
 getQuotes();
 
@@ -33,8 +35,11 @@ function completedFetching() {
   quoteWrapper.style.display = "block";
   generateQuoteBtn.style.visibility = "visible";
 
-  mainContainer.addEventListener("mouseenter", listenToHoverOverQuote);
-  mainContainer.addEventListener("mouseleave", listenToHoverOutQuote);
+  // if it is on touch screen there is no need for listenToHoverOver and Out of the quote
+  if (!isTouchScreen) {
+    mainContainer.addEventListener("mouseenter", listenToHoverOverQuote);
+    mainContainer.addEventListener("mouseleave", listenToHoverOutQuote);
+  }
 
   mainContainer.addEventListener("click", listenToClickOnQuote, {
     capture: true,
@@ -70,6 +75,7 @@ function setQuoteContent(text, author) {
 function listenToHoverOverButton() {
   generateQuoteBtn.style.backgroundColor = secondaryColor;
   generateQuoteBtn.style.color = "white";
+  if (isTouchScreen) setTimeout(listenToHoverOutButton, 200);
 }
 
 function listenToHoverOutButton() {
@@ -107,6 +113,7 @@ function changePrimaryColor() {
 }
 
 function listenToClickOnQuote() {
+  listenToHoverOverQuote(); // benificail in touch screen to show a message when copy
   var copiedText = '"' + quoteText.innerText + '" ' + quoteAuthor.innerText;
   navigator.clipboard.writeText(copiedText);
   quoteHoverText.innerHTML = "Copied!";
@@ -154,9 +161,7 @@ function convertToRGBColor(red, green, blue) {
 }
 
 /* TODO:
-         - learn about the dom rediness
          - want to learn more about animatian such as ease in and ease out
-         - responsivity : media queries + rem
 */
 
 /*
