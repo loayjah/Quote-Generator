@@ -8,8 +8,8 @@ const quoteAuthor = document.querySelector("#quote-author");
 const quoteWrapper = document.querySelector("#quote-wrapper");
 
 // generate and set the random primary color of the page
-var primaryColor = changePrimaryColor();
-var secondaryColor = changeSecondaryColor();
+var primaryColor = "#21a0a0";
+var secondaryColor = "#197878";
 
 var apiQuotes = [];
 
@@ -29,13 +29,13 @@ async function getQuotes() {
 }
 
 function loadFetching() {
-  quoteWrapper.hidden = true;
+  //quoteWrapper.hidden = true;
 }
 
 function completedFetching() {
   getNewQuote();
   document.querySelector("#loadingSpinner").remove();
-  quoteWrapper.hidden = false;
+  quoteWrapper.style.display = "block";
   generateQuoteBtn.style.visibility = "visible";
 
   mainContainer.addEventListener("mouseenter", listenToHoverOverQuote);
@@ -90,7 +90,7 @@ function getDarkerPrimaryColor(primaryColor) {
     return color;
   });
 
-  return setRGBColor(darkerColors[0], darkerColors[1], darkerColors[2]);
+  return convertToRGBColor(darkerColors[0], darkerColors[1], darkerColors[2]);
 }
 
 function changeSecondaryColor() {
@@ -151,15 +151,17 @@ function generateRandomColor() {
     return generateRandomColor();
   }
 
-  return setRGBColor(red, green, blue);
+  return convertToRGBColor(red, green, blue);
 }
 
-function setRGBColor(red, green, blue) {
+function convertToRGBColor(red, green, blue) {
   return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
 /* TODO: 
-         - at the end do not forget to add made with love by loay
+
+         - optimize the css file
+         - learn about the dom rediness
          - want to learn more about animatian such as ease in and ease out
          - responsivity : media queries + rem
 */
