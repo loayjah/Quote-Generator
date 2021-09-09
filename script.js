@@ -17,7 +17,6 @@ var apiQuotes = [];
 getQuotes();
 
 async function getQuotes() {
-  loadFetching();
   const apiURL = "https://type.fit/api/quotes";
   try {
     const response = await fetch(apiURL);
@@ -26,10 +25,6 @@ async function getQuotes() {
   } catch (error) {
     alert(error);
   }
-}
-
-function loadFetching() {
-  //quoteWrapper.hidden = true;
 }
 
 function completedFetching() {
@@ -82,10 +77,10 @@ function listenToHoverOutButton() {
   generateQuoteBtn.style.color = primaryColor;
 }
 
-function getDarkerPrimaryColor(primaryColor) {
-  var colors = primaryColor.slice(4, -1);
+function getDarkerPrimaryColor(mPrimaryColor) {
+  var colors = mPrimaryColor.slice(4, -1);
   colors = colors.split(", ");
-  darkerColors = colors.map(function (color) {
+  let darkerColors = colors.map(function (color) {
     color *= 0.75;
     return color;
   });
@@ -146,7 +141,7 @@ function generateRandomColor() {
     Math.abs(red - green) <= 10 ||
     Math.abs(red - blue) <= 10 ||
     Math.abs(green - blue) <= 10 ||
-    ((red >= 200) & (green >= 200) && blue >= 200)
+    (red >= 200 && green >= 200 && blue >= 200)
   ) {
     return generateRandomColor();
   }
@@ -158,9 +153,7 @@ function convertToRGBColor(red, green, blue) {
   return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
-/* TODO: 
-
-         - optimize the css file
+/* TODO:
          - learn about the dom rediness
          - want to learn more about animatian such as ease in and ease out
          - responsivity : media queries + rem
